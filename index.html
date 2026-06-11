@@ -13,12 +13,13 @@
     background: #f8f9fa;
     font-family: sans-serif;
     color: #202122;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
   }
-  a { color: #0645ad; text-decoration: none; }
+  a { color: #3366cc; text-decoration: none; }
   a:hover { text-decoration: underline; }
   a.redlink { color: #ba0000; }
+  a { color: #3366cc; }
   a.external { color: #36b; }
   sup.cn { font-size: 11px; }
   sup.cn a { color: #0645ad; white-space: nowrap; }
@@ -139,7 +140,7 @@
   h1#firstHeading {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 1.8em;
     margin: 0 0 4px 0;
     border-bottom: 1px solid #a2a9b1;
     padding-bottom: 4px;
@@ -148,7 +149,7 @@
   h2 {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 1.375em;
     border-bottom: 1px solid #a2a9b1;
     margin: 28px 0 10px 0;
     padding-bottom: 3px;
@@ -381,7 +382,7 @@
   }
   .sidebar-toc { list-style: none; margin: 0; padding: 0; }
   .sidebar-toc li { margin: 3px 0; }
-  .sidebar-toc a { color: #0645ad; font-size: 13px; display: block; line-height: 1.45; }
+  .sidebar-toc a { color: #3366cc; font-size: 13px; display: block; line-height: 1.45; }
   .sidebar-toc a:hover { text-decoration: underline; }
   .sidebar-toc .toc-sub { padding-left: 14px; }
   .sidebar-toc .toc-num { color: #54595d; font-size: 12px; margin-right: 6px; display: inline-block; min-width: 18px; }
@@ -1072,6 +1073,40 @@
     head.addEventListener('click', function() {
       var open = body.classList.toggle('open');
       head.classList.toggle('open', open);
+    });
+  })();
+
+  // Mobile: collapsible h2 sections
+  (function() {
+    if (window.innerWidth > 768) return;
+    var sections = document.querySelectorAll('.content h2');
+    sections.forEach(function(h2) {
+      // Gather all elements until next h2 or end of content
+      var siblings = [];
+      var el = h2.nextElementSibling;
+      while (el && el.tagName !== 'H2') {
+        siblings.push(el);
+        el = el.nextElementSibling;
+      }
+      if (!siblings.length) return;
+      // Wrap siblings in a collapsible div
+      var wrap = document.createElement('div');
+      wrap.className = 'section-body';
+      h2.parentNode.insertBefore(wrap, h2.nextSibling);
+      siblings.forEach(function(s) { wrap.appendChild(s); });
+      // Add toggle arrow to h2
+      var arrow = document.createElement('span');
+      arrow.className = 'section-arrow';
+      arrow.textContent = ' ▾';
+      arrow.style.cssText = 'float:right;font-size:14px;color:#54595d;cursor:pointer;font-family:sans-serif;font-weight:normal;';
+      h2.appendChild(arrow);
+      h2.style.cursor = 'pointer';
+      var open = true;
+      h2.addEventListener('click', function() {
+        open = !open;
+        wrap.style.display = open ? '' : 'none';
+        arrow.textContent = open ? ' ▾' : ' ▸';
+      });
     });
   })();
 </script>
