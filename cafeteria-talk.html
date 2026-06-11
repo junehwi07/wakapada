@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talk:Cafeteria table configurations - Foodpedia</title>
+<style>
+  * { box-sizing: border-box; }
+  html { font-size: 100%; }
+  body {
+    margin: 0;
+    background: #f6f6f6;
+    font-family: sans-serif;
+    color: #202122;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a.redlink { color: #ba0000; }
+
+  .page-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-left: 1px solid #a7d7f9;
+    border-right: 1px solid #a7d7f9;
+    min-height: 100vh;
+  }
+  .site-header {
+    padding: 18px 24px 0 24px;
+    background: #ffffff;
+  }
+  .title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 6px;
+  }
+  h1#firstHeading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 28px;
+    margin: 0;
+  }
+  .lang-btn {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #36c;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    padding: 5px 10px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .lang-btn:hover { background: #f8f9fa; }
+  .lang-btn .lang-icon { font-size: 16px; font-weight: 400; color: #202122; }
+  .lang-btn .lang-icon sub { font-size: 10px; }
+  .lang-btn .caret { font-size: 11px; color: #54595d; }
+  .tab-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    font-size: 14px;
+    border-bottom: 1px solid #a2a9b1;
+    margin-top: 2px;
+  }
+  .tabs-left, .tabs-right { display: flex; align-items: stretch; }
+  .tab-bar span, .tab-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 12px 9px 12px;
+    color: #36c;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab-bar span:hover, .tab-bar a:hover { text-decoration: underline; }
+  .tab-bar span.selected, .tab-bar a.selected {
+    color: #202122;
+    border-bottom: 2px solid #202122;
+    cursor: default;
+  }
+  .tab-bar span.selected:hover, .tab-bar a.selected:hover { text-decoration: none; }
+  .tab-bar .caret { font-size: 11px; color: #54595d; }
+  .tools-wrap { position: relative; display: flex; }
+  .tools-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #a2a9b1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    min-width: 200px;
+    z-index: 50;
+    padding: 6px 0;
+  }
+  .tools-menu.open { display: block; }
+  .tools-menu .menu-label { font-size: 11px; color: #54595d; padding: 6px 14px 2px 14px; font-weight: bold; }
+  .tools-menu a { display: block; padding: 4px 14px; color: #36c; font-size: 13px; border-bottom: none; margin: 0; }
+  .tools-menu a:hover { background: #eaf3ff; text-decoration: none; }
+  .subline { padding: 8px 0 14px 0; }
+  .siteSub { font-size: 12px; color: #54595d; }
+
+  .content { padding: 16px 24px 48px 24px; }
+  h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 22px;
+    border-bottom: 1px solid #a2a9b1;
+    margin: 28px 0 10px 0;
+    padding-bottom: 3px;
+  }
+  h2 .editsection { font-family: sans-serif; font-size: 12px; color: #0645ad; font-weight: normal; }
+  p { margin: 8px 0 14px 0; }
+
+  /* talk page boxes */
+  .talkheader {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .talkheader .th-title { text-align: center; margin-bottom: 4px; }
+  .talkheader ul { margin: 4px 0 0 0; padding-left: 20px; color: #54595d; font-size: 12px; }
+  .wpbanner {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    border-left: 10px solid #1e90ff;
+    padding: 8px 14px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .wpbanner .icon { font-size: 26px; }
+  .wpbanner .rating { white-space: nowrap; font-size: 12px; color: #54595d; }
+  .wpbanner .rating b.start { color: #ff7f00; }
+
+  /* threads */
+  .thread p { margin: 6px 0; }
+  .indent-1 { margin-left: 28px; }
+  .indent-2 { margin-left: 56px; }
+  .indent-3 { margin-left: 84px; }
+  .sig { white-space: nowrap; }
+  .sig .ts { color: #54595d; }
+  .closebox {
+    border: 1px solid #a2a9b1;
+    background: #f1f8e9;
+    padding: 8px 14px;
+    font-size: 13px;
+    margin: 10px 0;
+  }
+</style>
+</head>
+<body>
+<div class="page-shell">
+
+  <div class="site-header">
+    <div class="title-row">
+      <h1 id="firstHeading">Talk:Cafeteria table configurations</h1>
+      <div class="lang-btn"><span class="lang-icon">文<sub>A</sub></span> Add languages <span class="caret">▾</span></div>
+    </div>
+    <div class="tab-bar">
+      <div class="tabs-left">
+        <a href="index.html">Article</a><span class="selected">Talk</span>
+      </div>
+      <div class="tabs-right">
+        <a href="index.html">Read</a><a href="cafeteria-source.html">View source</a><a href="cafeteria-history.html">View history</a><div class="tools-wrap"><span id="tools-tab">Tools <span class="caret">▾</span></span>
+          <div class="tools-menu" id="tools-menu">
+            <div class="menu-label">General</div>
+            <a href="#">What links here</a>
+            <a href="cafeteria-talk.html">Permanent link</a>
+            <a href="#">Page information</a>
+            <a href="#">Cite this page</a>
+            <div class="menu-label">Print/export</div>
+            <a href="#" id="printable-link">Printable version</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subline">
+      <div class="siteSub">From Foodpedia, the free encyclopedia</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="talkheader">
+      <div class="th-title">This is the <b>talk page</b> for discussing improvements to the <a href="index.html">Cafeteria table configurations</a> article.</div>
+      <ul>
+        <li>Put new text under old text. Sign your posts with four tildes (<code>~~~~</code>).</li>
+        <li>This is not a forum for general discussion of where you personally like to sit.</li>
+      </ul>
+    </div>
+
+    <div class="wpbanner">
+      <div class="icon">🍽️</div>
+      <div>This article is within the scope of <b><a href="#">WikiProject Eating Infrastructure</a></b>, a collaborative effort to improve the coverage of tables, trays, and adjacent surfaces on Foodpedia.</div>
+      <div class="rating"><b class="start">Start</b>-class, <b>Low</b>-importance</div>
+    </div>
+
+    <h2>Notability <span class="editsection">[edit]</span></h2>
+    <div class="thread">
+      <p>Does a single lunch really warrant an encyclopedia article? As far as I can tell the entire body of evidence is one meal that lasted under an hour. <span class="sig">— <a href="#">143.248.91.17</a> (<a href="#">talk</a>) <span class="ts">14:02, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-1">The article does not document a lunch; it documents a <i>configuration space</i>. The lunch is merely the first field verification. By this logic we would delete the article on the Higgs boson because it was only observed at one cafeteria (CERN's). <span class="sig">— <a href="#">Junehwi.kim</a> (<a href="#">talk</a>) <span class="ts">14:17, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-2">CERN has more than one cafeteria.<span class="sig"> — <a href="#">143.248.91.17</a> (<a href="#">talk</a>) <span class="ts">14:21, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-3">Noted. The point stands. <span class="sig">— <a href="#">Junehwi.kim</a> (<a href="#">talk</a>) <span class="ts">14:22, 12 June 2026 (KST)</span></span></p>
+    </div>
+
+    <h2>Seating capacity figure <span class="editsection">[edit]</span></h2>
+    <div class="thread">
+      <p>The infobox claims a seating capacity of 5–7. I count 8 if someone takes the interior corner seat. <span class="sig">— <a href="#">TrayStacker99</a> (<a href="#">talk</a>) <span class="ts">14:48, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-1">The interior corner seat was evaluated during Experiment 1 and rejected: the occupant's tray collides with both segments simultaneously. It is a seat in the topological sense only. <span class="sig">— <a href="#">Junehwi.kim</a> (<a href="#">talk</a>) <span class="ts">15:03, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-2">"A seat in the topological sense only" should be in the article. <span class="sig">— <a href="#">ProxemicsFan</a> (<a href="#">talk</a>) <span class="ts">15:11, 12 June 2026 (KST)</span></span></p>
+    </div>
+
+    <h2>Requested move 12 June 2026 <span class="editsection">[edit]</span></h2>
+    <div class="thread">
+      <div class="closebox"><b>The following is a closed discussion of a requested move. Please do not modify it.</b><br>The result of the move request was: <b>not moved</b>. Snow close.</div>
+      <p><a href="index.html">Cafeteria table configurations</a> → <a class="redlink" href="#">Cafeteria table configurations (Pulbit-maru)</a> — All field data comes from a single cafeteria in Daejeon. Title should reflect scope. <span class="sig">— <a href="#">TrayStacker99</a> (<a href="#">talk</a>) <span class="ts">15:20, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-1"><b>Oppose.</b> The configuration space is site-independent; only the verification is local. We do not rename the article on gravity to "Gravity (Pisa)". <span class="sig">— <a href="#">Junehwi.kim</a> (<a href="#">talk</a>) <span class="ts">15:24, 12 June 2026 (KST)</span></span></p>
+      <p class="indent-1"><b>Oppose</b>, although I admire the energy. <span class="sig">— <a href="#">ProxemicsFan</a> (<a href="#">talk</a>) <span class="ts">15:31, 12 June 2026 (KST)</span></span></p>
+    </div>
+
+  </div>
+
+</div>
+<script>
+  (function () {
+    var tab = document.getElementById('tools-tab');
+    var menu = document.getElementById('tools-menu');
+    if (!tab || !menu) { return; }
+    tab.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target)) { menu.classList.remove('open'); }
+    });
+    var printLink = document.getElementById('printable-link');
+    if (printLink) {
+      printLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.print();
+      });
+    }
+  })();
+</script>
+</body>
+</html>
