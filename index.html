@@ -10,7 +10,7 @@
   html { font-size: 100%; }
   body {
     margin: 0;
-    background: #f6f6f6;
+    background: #f8f9fa;
     font-family: sans-serif;
     color: #202122;
     font-size: 14px;
@@ -27,7 +27,6 @@
     background: #ffffff;
     border-left: 1px solid #a7d7f9;
     border-right: 1px solid #a7d7f9;
-    min-height: 100vh;
   }
   .site-header {
     padding: 18px 24px 0 24px;
@@ -135,8 +134,8 @@
 
   .content {
     padding: 16px 24px 48px 24px;
-    overflow: hidden;
   }
+  .content::after { content: ''; display: table; clear: both; }
   h1#firstHeading {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: normal;
@@ -289,11 +288,11 @@
   }
   .catlinks a { margin: 0 4px; }
 
-  .footer-note { font-size: 11px; color: #72777d; padding: 14px 24px; border-top: 1px solid #a7d7f9; clear: both; }
+  .footer-note { font-size: 11px; color: #72777d; padding: 14px 24px; border-top: 1px solid #a7d7f9; clear: both; background: #ffffff; }
 
   @media (max-width: 768px) {
     /* layout */
-    body { display: block !important; }
+    body { display: block !important; background: #ffffff !important; }
     .wiki-sidebar-left, .wiki-sidebar-right { display: none !important; }
     .page-shell { border-left: none; border-right: none; max-width: 100%; flex: none; }
     /* show mobile TOC */
@@ -302,7 +301,7 @@
     /* header */
     .site-header { padding: 10px 14px 0 14px; }
     .title-row { flex-direction: column; align-items: flex-start; gap: 6px; }
-    h1#firstHeading { font-size: 22px; }
+    h1#firstHeading { font-size: 27px; }
     .lang-btn { font-size: 12px; padding: 3px 8px; }
 
     /* tab bar: horizontal scroll, no wrap */
@@ -358,15 +357,16 @@
   .gen-card .gc-meta { color: #54595d; font-size: 11px; margin-top: 4px; }
 
   /* === Vector 2022 sidebar layout === */
-  body { display: flex; align-items: flex-start; margin: 0; background: #f6f6f6; }
-  .page-shell { flex: 1; min-width: 0; max-width: 960px; margin: 0; }
+  body { display: flex; align-items: flex-start; margin: 0; background: #f8f9fa; }
   .wiki-sidebar-left, .wiki-sidebar-right {
     flex-shrink: 0; width: 200px; position: sticky; top: 0;
     align-self: flex-start; max-height: 100vh; overflow-y: auto; padding: 20px 10px;
   }
   .wiki-sidebar-right { padding: 20px 10px; }
-  /* mobile TOC: hidden by default, shown only on mobile via media query */
+  /* mobile TOC: hidden by default */
   .mobile-toc { display: none; }
+  /* page-shell fills space between sidebars */
+  .page-shell { flex: 1 1 auto; min-width: 0; }
   .sidebar-panel {
     background: #fff; border: 1px solid #a2a9b1; padding: 10px 14px; font-size: 13px;
   }
@@ -483,20 +483,6 @@
     <p><b>Cafeteria table configurations</b> are the set of spatial arrangements achievable with freestanding cafeteria tables. Although the number of theoretically possible configurations grows rapidly with table count, the observed configuration at the study site is the <a href="#cfg">spaced I-configuration</a>, in which the three tables stand aligned but separated by sizable gaps.<sup class="cn"><a href="#ref-1">[1]</a></sup> All joined configurations remain undocumented in everyday practice at this site.</p>
 
     <p>This page constitutes a systematic survey of the configuration space for <i>n</i> = 3 tables, together with field documentation of configurations as they are tested in situ. As of June 2026, two configurations — the <b>I-configuration</b> (joined linear) and the <b>L-configuration</b> — have been field-tested.<sup class="cn"><a href="https://docs.google.com/presentation/d/1oS3KNWZz-vIVtFtwEELJookUzb256GhLpJBWtQ6WOEo/edit?slide=id.g3e564276099_12_0#slide=id.g3e564276099_12_0" target="_blank" rel="noopener">[2]</a></sup></p>
-
-    <!-- ===== TOC ===== -->
-      <ol id="toc-list">
-        <li><span class="tocnum">1</span><a href="#cfg">Configuration space (n = 3)</a></li>
-        <li><span class="tocnum">2</span><a href="#field">Field documentation</a>
-          <ol>
-            <li><span class="tocnum">2.1</span><a href="#exp1">Experiment 1: L-configuration (June 2026)</a></li>
-          </ol>
-        </li>
-        <li><span class="tocnum">3</span><a href="#obs">Observations</a></li>
-        <li><span class="tocnum">4</span><a href="#seealso">See also</a></li>
-        <li><span class="tocnum">5</span><a href="#refs">References</a></li>
-      </ol>
-    </div>
 
     <!-- ===== SECTION 1 ===== -->
     <h2 id="cfg">Configuration space (n = 3) <span class="editsection">[edit]</span></h2>
