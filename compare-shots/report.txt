@@ -1,0 +1,1 @@
+[mobile] h1.fontSize: ours="27px" wiki="27.2px"

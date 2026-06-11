@@ -131,6 +131,68 @@
     .content { padding: 12px 14px 40px 14px; }
     h2 { font-size: 19px; }
   }
+
+  /* ── Global top navigation bar ─────────────────────── */
+  .mw-header {
+    background: #ffffff;
+    border-bottom: 1px solid #a7d7f9;
+    padding: 0 16px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    flex-shrink: 0;
+  }
+  .mw-hamb {
+    background: none; border: none; cursor: pointer;
+    padding: 6px; color: #54595d; font-size: 18px; line-height: 1;
+  }
+  .mw-hamb:hover { color: #202122; }
+  .mw-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: #202122; flex-shrink: 0;
+  }
+  .mw-logo-icon {
+    width: 40px; height: 40px; background: #cedff2;
+    border: 1px solid #a2a9b1; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: 22px; font-weight: bold; color: #3366cc;
+  }
+  .mw-logo-text { display: flex; flex-direction: column; }
+  .mw-logo-name { font-family: Georgia, serif; font-size: 16px; font-weight: bold; color: #202122; }
+  .mw-logo-tagline { font-size: 10px; color: #54595d; }
+  .mw-search {
+    flex: 1; max-width: 500px; display: flex; gap: 0;
+    border: 1px solid #a2a9b1; border-radius: 2px; overflow: hidden;
+  }
+  .mw-search input {
+    flex: 1; padding: 6px 10px; border: none; outline: none;
+    font-size: 14px; background: #ffffff;
+  }
+  .mw-search button {
+    padding: 6px 14px; background: #f8f9fa; border: none;
+    border-left: 1px solid #a2a9b1; cursor: pointer; font-size: 14px; color: #202122;
+  }
+  .mw-search button:hover { background: #eaecf0; }
+  .mw-nav-links {
+    margin-left: auto; display: flex; gap: 12px;
+    font-size: 13px; white-space: nowrap;
+  }
+  .mw-nav-links a { color: #3366cc; }
+  .mw-row { display: flex; align-items: flex-start; }
+  /* body becomes column to stack nav above mw-row */
+  body { flex-direction: column !important; }
+
+  @media (max-width: 768px) {
+    .mw-header { height: 44px; padding: 0 10px; gap: 8px; }
+    .mw-logo-text { display: none; }
+    .mw-search { max-width: none; }
+    .mw-nav-links { display: none; }
+    .mw-row { display: block !important; }
+  }
 </style>
 </head>
 <body>

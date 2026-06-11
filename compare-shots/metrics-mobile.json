@@ -1,0 +1,127 @@
+{
+  "ours": {
+    "h1Text": "Cafeteria table configurations",
+    "h1Style": {
+      "x": 14,
+      "y": 10,
+      "w": 352,
+      "h": 43,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "27px",
+      "fontFamily": "Georgia, \"Times New Roman\", serif"
+    },
+    "tabBarStyle": {
+      "x": 14,
+      "y": 106,
+      "w": 362,
+      "h": 51,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "14px",
+      "fontFamily": "sans-serif"
+    },
+    "tocStyle": null,
+    "contentStyle": {
+      "x": 0,
+      "y": 198,
+      "w": 390,
+      "h": 8060,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "14px",
+      "fontFamily": "sans-serif"
+    },
+    "infoboxStyle": {
+      "x": 14,
+      "y": 373,
+      "w": 362,
+      "h": 632,
+      "bg": "rgb(248, 249, 250)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "12px",
+      "fontFamily": "sans-serif"
+    },
+    "footerStyle": {
+      "x": 0,
+      "y": 8258,
+      "w": 390,
+      "h": 82,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(114, 119, 125)",
+      "fontSize": "11px",
+      "fontFamily": "sans-serif"
+    },
+    "sideLeftStyle": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "16px",
+      "fontFamily": "sans-serif"
+    },
+    "sideRightStyle": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "16px",
+      "fontFamily": "sans-serif"
+    },
+    "bodyBg": "rgb(255, 255, 255)",
+    "viewportW": 390
+  },
+  "wiki": {
+    "h1Text": "Folding table",
+    "h1Style": {
+      "x": 16,
+      "y": 316,
+      "w": 358,
+      "h": 37,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "27.2px",
+      "fontFamily": "\"Linux Libertine\", Georgia, Times, \"Source Serif 4\", serif"
+    },
+    "tabBarStyle": {
+      "x": 16,
+      "y": 396,
+      "w": 358,
+      "h": 48,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "16px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Inter, Helvetica, Arial, sans-serif"
+    },
+    "tocStyle": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(248, 249, 250)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "16px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Inter, Helvetica, Arial, sans-serif"
+    },
+    "contentStyle": {
+      "x": 16,
+      "y": 445,
+      "w": 358,
+      "h": 863,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(32, 33, 34)",
+      "fontSize": "16px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Inter, Helvetica, Arial, sans-serif"
+    },
+    "infoboxStyle": null,
+    "footerStyle": null,
+    "sideLeftStyle": null,
+    "sideRightStyle": null,
+    "bodyBg": "rgb(255, 255, 255)",
+    "viewportW": 390
+  }
+}
