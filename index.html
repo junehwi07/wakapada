@@ -305,9 +305,59 @@
   .gen-card .gc-title { font-size: 12.5px; }
   .gen-card .gc-desc { color: #202122; margin-top: 2px; }
   .gen-card .gc-meta { color: #54595d; font-size: 11px; margin-top: 4px; }
+
+  /* === Vector 2022 sidebar layout === */
+  body { display: flex; align-items: flex-start; margin: 0; background: #f6f6f6; }
+  .wiki-sidebar-left, .wiki-sidebar-right {
+    flex-shrink: 0; width: 220px; position: sticky; top: 0;
+    align-self: flex-start; max-height: 100vh; overflow-y: auto; padding: 20px 10px;
+  }
+  .wiki-sidebar-right { padding: 20px 10px 20px 10px; }
+  .sidebar-panel {
+    background: #fff; border: 1px solid #a2a9b1; padding: 10px 14px; font-size: 13px;
+  }
+  .sidebar-panel-head {
+    font-weight: bold; font-size: 14px; display: flex;
+    justify-content: space-between; align-items: center;
+    padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid #a2a9b1;
+  }
+  .sidebar-panel-head button {
+    font-size: 11px; color: #54595d; background: #f8f9fa;
+    border: 1px solid #a2a9b1; padding: 1px 7px; cursor: pointer; border-radius: 2px;
+  }
+  .sidebar-toc { list-style: none; margin: 0; padding: 0; }
+  .sidebar-toc li { margin: 3px 0; }
+  .sidebar-toc a { color: #0645ad; font-size: 13px; display: block; line-height: 1.45; }
+  .sidebar-toc a:hover { text-decoration: underline; }
+  .sidebar-toc .toc-sub { padding-left: 14px; }
+  .sidebar-toc .toc-num { color: #54595d; font-size: 12px; margin-right: 4px; }
+  .appear-section { margin-top: 12px; }
+  .appear-label { color: #54595d; font-size: 11px; border-bottom: 1px solid #eaecf0;
+    padding-bottom: 2px; margin-bottom: 5px; }
+  .appear-opt { display: flex; align-items: center; gap: 7px; font-size: 13px;
+    margin: 3px 0; cursor: pointer; }
+  .appear-opt input { accent-color: #3465d9; width: 15px; height: 15px; cursor: pointer; }
+  @media (max-width: 1280px) { .wiki-sidebar-right { display: none; } }
+  @media (max-width: 1000px) { .wiki-sidebar-left { display: none; } body { display: block; } }
 </style>
 </head>
 <body>
+<aside class="wiki-sidebar-left">
+  <div class="sidebar-panel" id="toc-sidebar-panel">
+    <div class="sidebar-panel-head">Contents <button id="toc-sb-toggle">[hide]</button></div>
+    <ul class="sidebar-toc" id="toc-sb-list">
+      <li><a href="#cfg"><span class="toc-num">1</span>Configuration space (n = 3)</a></li>
+      <li><a href="#field"><span class="toc-num">2</span>Field documentation</a>
+        <ul class="toc-sub">
+          <li><a href="#exp1"><span class="toc-num">2.1</span>Experiment 1: L-configuration (June 2026)</a></li>
+        </ul>
+      </li>
+      <li><a href="#obs"><span class="toc-num">3</span>Observations</a></li>
+      <li><a href="#seealso"><span class="toc-num">4</span>See also</a></li>
+      <li><a href="#refs"><span class="toc-num">5</span>References</a></li>
+    </ul>
+  </div>
+</aside>
 <div class="page-shell">
 
   <div class="site-header">
@@ -363,8 +413,6 @@
     <p>This page constitutes a systematic survey of the configuration space for <i>n</i> = 3 tables, together with field documentation of configurations as they are tested in situ. As of June 2026, two configurations — the <b>I-configuration</b> (joined linear) and the <b>L-configuration</b> — have been field-tested.<sup class="cn"><a href="https://docs.google.com/presentation/d/1oS3KNWZz-vIVtFtwEELJookUzb256GhLpJBWtQ6WOEo/edit?slide=id.g3e564276099_12_0#slide=id.g3e564276099_12_0" target="_blank" rel="noopener">[2]</a></sup></p>
 
     <!-- ===== TOC ===== -->
-    <div class="toc">
-      <div class="toctitle">Contents <small id="toc-toggle" style="cursor:pointer;">[hide]</small></div>
       <ol id="toc-list">
         <li><span class="tocnum">1</span><a href="#cfg">Configuration space (n = 3)</a></li>
         <li><span class="tocnum">2</span><a href="#field">Field documentation</a>
@@ -842,6 +890,36 @@
     This page was last edited on 12 June 2026, at 13:10 (KST). · This is a wireframe parody for a course project; it is not affiliated with Wikipedia or the Wikimedia Foundation.
   </div>
 </div>
+<aside class="wiki-sidebar-right">
+  <div class="sidebar-panel" id="appear-panel">
+    <div class="sidebar-panel-head">Appearance <button id="appear-toggle">[hide]</button></div>
+    <div id="appear-body">
+      <div class="appear-section">
+        <div class="appear-label">Text</div>
+        <div class="appear-options">
+          <label class="appear-opt"><input type="radio" name="txt-size" value="small"> Small</label>
+          <label class="appear-opt"><input type="radio" name="txt-size" value="standard" checked> Standard</label>
+          <label class="appear-opt"><input type="radio" name="txt-size" value="large"> Large</label>
+        </div>
+      </div>
+      <div class="appear-section">
+        <div class="appear-label">Width</div>
+        <div class="appear-options">
+          <label class="appear-opt"><input type="radio" name="width" value="standard" checked> Standard</label>
+          <label class="appear-opt"><input type="radio" name="width" value="wide"> Wide</label>
+        </div>
+      </div>
+      <div class="appear-section">
+        <div class="appear-label">Color</div>
+        <div class="appear-options">
+          <label class="appear-opt"><input type="radio" name="color" value="auto"> Automatic</label>
+          <label class="appear-opt"><input type="radio" name="color" value="light" checked> Light</label>
+          <label class="appear-opt"><input type="radio" name="color" value="dark"> Dark</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
 <script>
   (function () {
     var toggle = document.getElementById('toc-toggle');
@@ -872,6 +950,55 @@
       });
     }
   })();
+
+  // TOC sidebar toggle
+  (function() {
+    var btn = document.getElementById('toc-sb-toggle');
+    var list = document.getElementById('toc-sb-list');
+    if (!btn || !list) return;
+    btn.addEventListener('click', function() {
+      var hidden = list.style.display === 'none';
+      list.style.display = hidden ? '' : 'none';
+      btn.textContent = hidden ? '[hide]' : '[show]';
+    });
+  })();
+  // Appearance sidebar toggle
+  (function() {
+    var btn = document.getElementById('appear-toggle');
+    var body = document.getElementById('appear-body');
+    if (!btn || !body) return;
+    btn.addEventListener('click', function() {
+      var hidden = body.style.display === 'none';
+      body.style.display = hidden ? '' : 'none';
+      btn.textContent = hidden ? '[hide]' : '[show]';
+    });
+  })();
+  // Text size
+  document.querySelectorAll('input[name="txt-size"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      var map = { small: '12px', standard: '14px', large: '17px' };
+      document.querySelector('.content').style.fontSize = map[this.value] || '14px';
+    });
+  });
+  // Width
+  document.querySelectorAll('input[name="width"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      document.querySelector('.page-shell').style.maxWidth = this.value === 'wide' ? '1200px' : '';
+    });
+  });
+  // Color / dark mode
+  document.querySelectorAll('input[name="color"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      var dark = this.value === 'dark' || (this.value === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.body.style.background = dark ? '#2a2a2a' : '#f6f6f6';
+      document.querySelector('.page-shell').style.background = dark ? '#1a1a1a' : '#ffffff';
+      document.querySelector('.page-shell').style.color = dark ? '#e8e6e3' : '#202122';
+      document.querySelectorAll('.sidebar-panel').forEach(function(p) {
+        p.style.background = dark ? '#1a1a1a' : '#ffffff';
+        p.style.color = dark ? '#e8e6e3' : '#202122';
+      });
+    });
+  });
 </script>
 </body>
 </html>
